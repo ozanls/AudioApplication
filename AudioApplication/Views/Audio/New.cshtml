@@ -1,0 +1,34 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Upload an Audio</h2>
+<form action="/audio/create" method="POST">
+    <div>
+        <label>Audio Name:</label>
+        <input type="text" name="AudioName" />
+    </div>
+    <div>
+        <label>Audio URL:</label>
+        <input type="text" name="AudioURL" />
+    </div>
+    <div>
+        <label>Audio Length:</label>
+        <input type="number" name="AudioLength" />
+    </div>
+    <input type="hidden" id="datetime" name="AudioTimestamp" />
+    <div>
+        <label>Audio Uploader Id:</label>
+        <input type="number" name="AudioUploaderId" />
+    </div>
+    <div>
+        <label>Category Id:</label>
+        <input type="number" name="CategoryId" />
+    </div>
+    <input type="submit" value="Upload Audio" />
+</form>
+<script>
+    datetimeInput = document.getElementById("datetime");
+    datetimeInput.value = new Date().toISOString();
+</script>

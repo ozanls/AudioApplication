@@ -1,0 +1,5 @@
+﻿- Process data url into an audio player via tone.js
+- Include a way to upload files
+- Replace 'AudioUploaderId' with real user id's.
+- Add category dropdown to audio edit/upload pages.
+- 
