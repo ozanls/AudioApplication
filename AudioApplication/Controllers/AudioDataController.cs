@@ -38,6 +38,33 @@ namespace AudioApplication.Controllers
             return AudioDtos;
         }
 
+
+        // GET: api/AudioData/ListAudioForCategory
+        [HttpGet]
+        [ResponseType(typeof(AudioDto))]
+
+        public IHttpActionResult ListAudioForCategory(int id)
+        {
+            List<Audio> Audios = db.Audios.Where(a=>a.CategoryId==id).ToList();
+            List<AudioDto> AudioDtos = new List<AudioDto>();
+
+            Audios.ForEach(a => AudioDtos.Add(new AudioDto()
+            {
+                AudioId = a.AudioId,
+                AudioName = a.AudioName,
+                AudioURL = a.AudioURL,
+                AudioLength = a.AudioLength,
+                AudioTimestamp = a.AudioTimestamp,
+                AudioStreams = a.AudioStreams,
+                AudioUploaderId = a.AudioUploaderId,
+                CategoryName = a.Category.CategoryName
+            }));
+            return Ok(AudioDtos);
+        }
+
+
+
+
         // GET: api/AudioData/FindAudio/5
         [ResponseType(typeof(Audio))]
         [HttpGet]

@@ -184,6 +184,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AudioController.cs" />
     <Compile Include="Controllers\AudioDataController.cs" />
+    <Compile Include="Controllers\CategoryDataController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -285,6 +286,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Views\Animal\" />
     <Folder Include="Views\CategoryData\" />
+    <Folder Include="Views\SpeciesData\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
