@@ -1,0 +1,15 @@
+﻿@model IEnumerable<AudioApplication.Models.CategoryDto>
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>List Categories</h2>
+
+@foreach (var Category in Model)
+{
+    <div>
+        <a href="Show/@Category.CategoryId">
+            @Category.CategoryName
+        </a>
+    </div>
+}

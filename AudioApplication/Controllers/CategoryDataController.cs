@@ -156,6 +156,7 @@ namespace CategoryApplication.Controllers
                 return BadRequest(ModelState);
             }
 
+            Debug.WriteLine(category);
             db.Categories.Add(category);
             db.SaveChanges();
 

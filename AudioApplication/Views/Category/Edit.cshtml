@@ -1,0 +1,20 @@
+﻿@model AudioApplication.Models.CategoryDto
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit @Model.CategoryName</h2>
+
+<form action="/category/update/@Model.CategoryId" method="POST">
+    <div>
+        <label>Category Id:</label>
+        <input type="number" name="CategoryId" value="@Model.CategoryId" readonly />
+    </div>
+    <div>
+        <label>Category Name:</label>
+        <input type="text" name="CategoryName" value="@Model.CategoryName" />
+    </div>
+    <input type="submit" value="Save Changes" />
+</form>
+

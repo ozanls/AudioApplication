@@ -6,7 +6,7 @@
 
 <h2>Edit @Model.AudioName</h2>
 
-<form action="/audio/create" method="POST">
+<form action="/audio/update/@Model.AudioId" method="POST">
     <div>
         <label>Audio Name:</label>
         <input type="text" name="AudioName" value="@Model.AudioName"/>
