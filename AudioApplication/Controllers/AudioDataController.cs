@@ -17,7 +17,16 @@ namespace AudioApplication.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: api/AudioData/ListAudios
+        ///<summary>
+        /// Returns all audios in the database
+        /// </summary>
+        /// <returns>
+        /// HEADER: 200 (OK)
+        /// CONTENT: all audios in the database
+        /// </returns>
+        /// <example>
+        /// GET: api/audiodata/listaudios
+        /// </example>
         [HttpGet]
         public IEnumerable<AudioDto> ListAudios()
         {
@@ -39,7 +48,18 @@ namespace AudioApplication.Controllers
         }
 
 
-        // GET: api/AudioData/ListAudioForCategory
+
+        ///<summary>
+        /// Returns all audios associated with a category
+        /// </summary>
+        /// <returns>
+        /// HEADER: 200 (OK)
+        /// CONTENT: all audios related to the category
+        /// </returns>
+        ///<param name="id">The primary key of the specified category</param>
+        /// <example>
+        /// GET: api/audiodata/listaudios
+        /// </example>
         [HttpGet]
         [ResponseType(typeof(AudioDto))]
 
@@ -63,9 +83,19 @@ namespace AudioApplication.Controllers
         }
 
 
-
-
-        // GET: api/AudioData/FindAudio/5
+        /// <summary>
+        /// Returns a specified audio
+        /// </summary>
+        /// <returns>
+        /// HEADER: 200 (OK)
+        /// CONTENT: An audio in the system matching up to the audio ID primary key
+        /// or
+        /// HEADER: 404 (NOT FOUND)
+        /// </returns>
+        /// <param name="id">The primary key of the audio</param>
+        /// <example>
+        /// GET: api/audiodata/findaudio/5
+        /// </example>
         [ResponseType(typeof(Audio))]
         [HttpGet]
         public IHttpActionResult FindAudio(int id)
@@ -90,7 +120,23 @@ namespace AudioApplication.Controllers
             return Ok(AudioDto);
         }
 
-        // POST: api/AudioData/UpdateAudio/5
+
+        /// <summary>
+        /// Updates a particular audio in the system with POST data input
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="audio">JSON Form data of a audio</param>
+        /// <returns>
+        /// HEADER:204 (success, no content response)
+        /// or
+        /// HEADER:400 (Bad Request)
+        /// or
+        /// HEADER:404 (Not Found)
+        /// </returns>
+        /// <example>
+        /// POST: api/audiodata/updateaudio/5
+        /// FORM DATA: audio JSON Object
+        /// </example>
         [ResponseType(typeof(void))]
         [HttpPost]
         public IHttpActionResult UpdateAudio(int id, Audio audio)
@@ -134,8 +180,20 @@ namespace AudioApplication.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/AudioData/AddAudio
-        [ResponseType(typeof(Audio))]
+        /// <summary>
+        /// Adds an audio to the database
+        /// </summary>
+        /// <param name="audio"></param>
+        /// <returns>
+        /// HEADER: 201 (Created)
+        /// CONTENT: Audio ID, Audio Data
+        /// or
+        /// HEADER: 400 (Bad Request)
+        /// </returns>
+        /// <example>
+        /// POST: api/AudioData/AddAudio 
+        /// FORM DATA: Audio JSON Object
+        /// </example>
         [HttpPost]
         public IHttpActionResult AddAudio(Audio audio)
         {

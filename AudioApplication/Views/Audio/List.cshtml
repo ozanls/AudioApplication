@@ -3,12 +3,17 @@
     ViewBag.Title = "List";
 }
 
-<h2>List Audios</h2>
+<h2 class="page-title">All Audios</h2>
 
-@foreach (var Audio in Model) {
-    <div>
-        <a href="Show/@Audio.AudioId">
-            @Audio.AudioName
-        </a>
-    </div>
-}
+<ul class="list">
+    @foreach (var Audio in Model)
+    {
+        <li>
+
+            <a href="Show/@Audio.AudioId">
+                @Audio.AudioName
+            </a>
+        </li>
+
+    }
+</ul>

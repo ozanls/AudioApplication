@@ -7,6 +7,8 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Script.Serialization;
 using AudioApplication.Models;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace AudioApplication.Controllers
 {
@@ -126,8 +128,11 @@ namespace AudioApplication.Controllers
         // GET: Audio/New
         public ActionResult New()
         {
+            string url = "https://localhost:44318/api/categorydata/listcategories";
+            HttpResponseMessage response = client.GetAsync(url).Result;
+            IEnumerable<CategoryDto> categories = JsonConvert.DeserializeObject<IEnumerable<CategoryDto>>(response.Content.ReadAsStringAsync().Result);
+            return View(categories);
 
-            return View();
         }
 
 

@@ -1,0 +1,22 @@
+# SoundByte
+
+## SoundByte is a web application built with ASP.NET MVC and Web API for sharing audio files.. It allows users to perform CRUD (Create, Read, Update, Delete) operations on audio entries through a user-friendly interface.
+
+### Features
+
+    ####Audio Management:
+        List all audios.
+        View details of a specific audio.
+        Add new audio entries.
+        Edit existing audio details.
+        Delete audio entries.
+
+    ####Category Management:
+        List all categories.
+        View details of a specific category.
+        Add new categories.
+        Edit existing category details.
+        Delete categories.
+
+### Technologies Used
+ASP.NET MVC, ASP.NET Web API, Entity Framework, SQL Server, HTML, CSS, Bootstrap, JavaScript, C#
